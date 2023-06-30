@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private Transform blockPrefab;
     [SerializeField] private Transform blockHolder;
+    [SerializeField] private Transform[] ArrayAnimales;
 
     [SerializeField] private TMPro.TextMeshProUGUI livesText;
 
@@ -25,7 +27,9 @@ public class GameManager : MonoBehaviour
     private int startingLives = 3;
     private int livesRemaining;
     private bool playing = true;
+    private int previousAnimalIndex = 0;
 
+    public GameOverScreen GameOverScreen;
 
     private void Start()
     {
@@ -68,16 +72,32 @@ public class GameManager : MonoBehaviour
         if(livesRemaining == 0)
         {
             playing = false;
+            gameOverScreen.GameOver();
+
+        }
+    }
+
+    public void victoryScreen()
+    {
+        if (livesRemaining > 0)
+        {
+            playing = false;
         }
     }
 
 
     private void SpawnNewBlock()
     {
+        var randomNumber = Random.Range((int)0, ArrayAnimales.Length-1);
+        randomNumber = randomNumber == previousAnimalIndex ? Random.Range((int)0, ArrayAnimales.Length - 1) : randomNumber;
+        blockPrefab = ArrayAnimales[randomNumber];
+        Debug.Log(randomNumber);
         currentBlock = Instantiate(blockPrefab, blockHolder);
         currentBlock.position = blockStartPosition;
         currentRigidbody = currentBlock.GetComponent<Rigidbody2D>();
 
         blockSpeed = blockSpeed + blockSpeedIncrement;
+
+        previousAnimalIndex = randomNumber;
     }
 }

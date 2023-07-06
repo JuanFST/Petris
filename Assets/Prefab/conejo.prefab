@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5905532652764964729}
   - component: {fileID: 5837256110112889394}
   - component: {fileID: -7881918534880697083}
+  - component: {fileID: 7141151626213156440}
   m_Layer: 0
   m_Name: conejo
   m_TagString: Untagged
@@ -99,18 +100,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.000019099563, y: 0.0001681298}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.16}
+    oldSize: {x: 0.17777778, y: 0.17777778}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 0.17777288, y: 0.17744523}
   m_EdgeRadius: 0
 --- !u!50 &-7881918534880697083
 Rigidbody2D:
@@ -133,3 +134,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &7141151626213156440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4395023482608782834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a12106b031011d49aa456e7a9854b06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

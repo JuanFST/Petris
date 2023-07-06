@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Transform blockPrefab;
     [SerializeField] private Transform blockHolder;
     [SerializeField] private Transform[] ArrayAnimales;
+    [SerializeField] private Transform Garra;
+
 
     [SerializeField] private TMPro.TextMeshProUGUI livesText;
 
@@ -27,9 +29,12 @@ public class GameManager : MonoBehaviour
     private int startingLives = 3;
     private int livesRemaining;
     private bool playing = true;
+    private bool rotated = false;
+
     private int previousAnimalIndex = 0;
 
     public GameOverScreen GameOverScreen;
+    public winScreen winScreen;
 
     private void Start()
     {
@@ -44,6 +49,7 @@ public class GameManager : MonoBehaviour
         {
             float moveAmount = Time.deltaTime * blockSpeed * blockDirection;
             currentBlock.position = currentBlock.position + new Vector3(moveAmount, 0, 0);
+            Garra.position = currentBlock.position + new Vector3(moveAmount, 1, 0);
 
             if (Mathf.Abs(currentBlock.position.x) > xLimit)
             {
@@ -58,6 +64,22 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            currentBlock.transform.rotation = Quaternion.Euler(0,0,90);
+            rotated = true;
+            Debug.Log("rote");
+        }
+        if (rotated == true && Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            currentBlock.transform.rotation = Quaternion.Euler(0, 0, 0);
+            rotated = false;
+            Debug.Log("rote original");
+
+
+        }
+
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene(0);
@@ -66,24 +88,36 @@ public class GameManager : MonoBehaviour
     }
     public void removeLife()
     {
+        if (playing == true)
+        {
+            HealthManager.health--;
+
+        }
         livesRemaining = Mathf.Max(livesRemaining - 1, 0);
         livesText.text = $"{livesRemaining}";
+        
 
-        if(livesRemaining == 0)
+        if(HealthManager.health <= 0)
         {
             playing = false;
-            gameOverScreen.GameOver();
+            GameOverScreen.GameOver();
 
         }
     }
 
-    public void victoryScreen()
+    public void Win()
     {
-        if (livesRemaining > 0)
-        {
-            playing = false;
-        }
+        playing = false;
+        winScreen.youWin();
     }
+
+    public void changeTag()
+    {
+        currentBlock.tag = "Animalito";
+        Debug.Log("cambie el tag");
+
+    }
+
 
 
     private void SpawnNewBlock()

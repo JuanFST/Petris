@@ -8,6 +8,11 @@ public class PerderVida : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.CompareTag("Animalito") || collision.gameObject.CompareTag("Animalito2"))
+        {
+            Destroy(collision.gameObject);
+        }
         gameManager.removeLife();
+       
     }
 }

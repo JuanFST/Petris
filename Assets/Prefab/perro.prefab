@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8097746610636939679}
   - component: {fileID: 6586007703638085417}
   - component: {fileID: -2624210267587723285}
+  - component: {fileID: -4807937002855384016}
   m_Layer: 0
   m_Name: perro
   m_TagString: Untagged
@@ -103,7 +104,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.32}
+    oldSize: {x: 0.17777778, y: 0.35555556}
     newSize: {x: 0.16, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -133,3 +134,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-4807937002855384016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4149799413803359621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a12106b031011d49aa456e7a9854b06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

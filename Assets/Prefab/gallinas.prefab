@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7088956955740015583}
   - component: {fileID: -4416713771231055968}
   - component: {fileID: 7814636569972134337}
+  - component: {fileID: 6620710259412235289}
   m_Layer: 0
   m_Name: gallinas
   m_TagString: Untagged
@@ -135,6 +136,18 @@ PolygonCollider2D:
     - - {x: -0.17777778, y: 0.17777778}
       - {x: -0.17777778, y: 0}
       - {x: -0.00025430322, y: 0.0006658584}
-      - {x: 0, y: -0.17777778}
+      - {x: -0.000030899042, y: -0.17776273}
       - {x: 0.17777778, y: -0.17777778}
       - {x: 0.17777778, y: 0.17777778}
+--- !u!114 &6620710259412235289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5831995500310917480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a12106b031011d49aa456e7a9854b06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

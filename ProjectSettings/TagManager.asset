@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Animalito
+  - Piso
+  - Animalito2
+  - Animalito1
   layers:
   - Default
   - TransparentFX

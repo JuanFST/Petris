@@ -6,8 +6,21 @@ public class Victoria : MonoBehaviour
 {
     [SerializeField] private GameManager gameManager;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /* private void OnTriggerEnter2D(Collider2D collision)
+     {
+         if (collision.tag == "Animalito2")
+         {
+             gameManager.Win();
+         }
+     }*/
+
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        gameManager.victoryScreen();
+        if (collision.tag == "Animalito2")
+        {
+            gameManager.Win();
+        }
     }
+    
+
 }
